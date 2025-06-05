@@ -33,8 +33,8 @@ function mostrarMenuPrincipal(): void {
     echo "1. Registrar Dono de Animal\n";
     echo "2. Registrar Animal\n";
     echo "3. Acessar Dados da Balconista\n";
-    echo "4. Acessar Dados do Veterinário(a)\n";
-    echo "5. Acessar Dados do Vendedor(a)\n";
+    echo "4. Acessar Dados do Veterinário\n";
+    echo "5. Acessar Dados do Vendedor\n";
     echo "6. Realizar Venda\n";
     echo "7. Ver Histórico do Cliente\n";
     echo "8. Listar Donos Cadastrados\n";
@@ -57,7 +57,7 @@ while (true) {
             }
             $idadeDono = (int)lerEntrada("Idade do dono: ");
             $enderecoDono = lerEntrada("Endereço do dono: ");
-            $contatoDono = lerEntrada("Contato do dono (telefone/email): ");
+            $contatoDono = lerEntrada("Contato: ");
 
             $novoDono = new Dono($nomeDono, $idadeDono, $enderecoDono, $contatoDono);
             $donos[$nomeDono] = $novoDono;
@@ -81,7 +81,7 @@ while (true) {
             $racaAnimal = lerEntrada("Raça do animal: ");
             $qtdPatasAnimal = (int)lerEntrada("Quantidade de patas do animal: ");
             $corAnimal = lerEntrada("Cor do animal: ");
-            $pesoAnimal = (float)lerEntrada("Peso do animal (kg, ex: 10.5): ");
+            $pesoAnimal = (float)lerEntrada("Peso do animal: ");
             $tamanhoAnimal = lerEntrada("Tamanho do animal (pequeno, médio, grande): ");
 
             echo "Tipo de animal (1-Cachorro, 2-Gato, 3-Pássaro): ";
@@ -234,7 +234,7 @@ while (true) {
             break;
 
         case '0':
-            echo "Saindo do sistema. Até logo!\n";
+            echo "Saindo do sistema!\n";
             exit;
 
         default:
