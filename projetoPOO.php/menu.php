@@ -17,11 +17,12 @@ $balconista = new Balconista("Cláudia Ribeiro", 28, "Rua Principal, 100", "3211
 $veterinario = new Veterinario("Dr. Fernando Moura", 50, "Av. Saúde, 200", "3211-0022");
 $vendedor = new Vendedor("Lucas Almeida", 23, "Praça das Vendas, 30", "3211-0033");
 
-$produtosDisponiveis["Racao Premium Caes"] = new Produto("Racao Premium Caes", 120.50);
-$produtosDisponiveis["Racao Premium Gatos"] = new Produto("Racao Premium Gatos", 99.90);
-$produtosDisponiveis["Antipulgas"] = new Produto("Antipulgas", 45.00);
-$produtosDisponiveis["Brinquedo Ossinho"] = new Produto("Brinquedo Ossinho", 25.75);
-$produtosDisponiveis["Caixa de Areia"] = new Produto("Caixa de Areia", 60.00);
+$produtosDisponiveis[strtolower("Ração Premium Cães")] = new Produto("Ração Premium Cães", 120.50);
+$produtosDisponiveis[strtolower("Ração Premium Gatos")] = new Produto("Ração Premium Gatos", 99.90);
+$produtosDisponiveis[strtolower("Antipulgas")] = new Produto("Antipulgas", 45.00);
+$produtosDisponiveis[strtolower("Brinquedo Ossinho")] = new Produto("Brinquedo Ossinho", 25.75);
+$produtosDisponiveis[strtolower("Caixa de Areia")] = new Produto("Caixa de Areia", 60.00);
+$produtosDisponiveis[strtolower("Sementes para pássaros")] = new Produto("Sementes para pássaros", 15,00);
 
 function lerEntrada(string $prompt): string {
     echo $prompt;
@@ -29,7 +30,7 @@ function lerEntrada(string $prompt): string {
 }
 
 function mostrarMenuPrincipal(): void {
-    echo "\n--- Clínica Veterinária Alegria Animal ---\n";
+    echo "\n--- Clínica Veterinária ---\n";
     echo "1. Registrar Dono de Animal\n";
     echo "2. Registrar Animal\n";
     echo "3. Acessar Dados da Balconista\n";
@@ -194,7 +195,7 @@ while (true) {
             } else {
                 foreach ($animaisDoDono as $animal) {
                     echo "- " . $animal->getInfo() . "\n";
-                    echo "  Som: " . $animal->falar() . "\n";
+                    echo $animal->falar() . "\n";
                 }
             }
 
