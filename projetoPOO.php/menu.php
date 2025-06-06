@@ -106,7 +106,7 @@ while (true) {
 
             if ($novoAnimal) {
                 $donoObj->addAnimal($novoAnimal);
-                echo "Animal '{$novoAnimal->getNome()}' (que faz '{$novoAnimal->falar()}') registrado para '{$donoObj->getNome()}' com sucesso!\n";
+                echo "Animal '{$novoAnimal->getNome()}' ('{$novoAnimal->falar()}') registrado para '{$donoObj->getNome()}' com sucesso!\n";
             }
             break;
 
@@ -116,12 +116,12 @@ while (true) {
             break;
 
         case '4':
-            echo "-- Dados do Veterinário(a) --\n";
+            echo "-- Dados do Veterinário --\n";
             echo $veterinario->getInfo() . "\n";
             break;
 
         case '5':
-            echo "-- Dados do Vendedor(a) --\n";
+            echo "-- Dados do Vendedor --\n";
             echo $vendedor->getInfo() . "\n";
             break;
 
